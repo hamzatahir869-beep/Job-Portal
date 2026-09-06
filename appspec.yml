@@ -1,0 +1,22 @@
+version: 0.0
+os: windows
+
+files:
+  - source: EmployerNext/bin/Release/net8.0/win-x64/publish
+    destination: C:\IISSites\EmployerNext
+
+hooks:
+  BeforeInstall:
+    - location: Scripts/stop-iis-site.ps1
+      timeout: 180
+      runas: Administrator
+    - location: Scripts/backup.ps1
+      timeout: 180
+      runas: Administrator
+    - location: Scripts/clean.ps1
+      timeout: 180
+      runas: Administrator
+  AfterInstall:
+    - location: Scripts/start-iis-site.ps1
+      timeout: 180
+      runas: Administrator

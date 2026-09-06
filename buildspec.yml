@@ -1,0 +1,33 @@
+﻿version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0
+    commands:
+     - echo "Installing AWS PowerShell Modules..."
+     - pwsh -Command "Install-Module -Name AWS.Tools.Installer -Force -Scope CurrentUser"
+     - pwsh -Command "Install-AWSToolsModule AWS.Tools.SimpleSystemsManagement, AWS.Tools.Common -Force -Scope CurrentUser"
+     - echo "Modules installed successfully"
+
+  build:
+    commands:
+      - echo "Restoring dependencies..."
+      - dotnet restore
+      - echo "Publishing with publish profile..."
+      - dotnet publish "EmployerNext.sln" -c Release /p:PublishProfile=FolderProfile
+
+  post_build:
+    commands:
+      - echo "Running parameter replacement..."
+      - pwsh -File Scripts/replace-params.ps1
+      - echo "Final web.config after update:"
+      - cat EmployerNext/bin/Release/net8.0/win-x64/publish/appsettings.json
+      - echo "✅ Build complete. Listing output files..."
+      - dir EmployerNext/bin/Release/net8.0/win-x64/publish
+
+artifacts:
+  files:
+    - EmployerNext/bin/Release/net8.0/win-x64/publish/**/*
+    - appspec.yml
+    - Scripts/**/*
