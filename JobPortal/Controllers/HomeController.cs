@@ -1,9 +1,10 @@
 using EmployerNext.Models;
-using EmployerNext.Repository;
+using JobPortal.Models;
+using JobPortal.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace EmployerNext.Controllers
+namespace JobPortal.Controllers
 {
     public class HomeController : Controller
     {

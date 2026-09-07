@@ -1,8 +1,8 @@
-﻿using EmployerNext.Models;
+﻿using JobPortal.Models;
 using System.Net;
 using System.Net.Mail;
 
-namespace EmployerNext.Repository
+namespace JobPortal.Repository
 {
     public class EmailService : IEmailService
     {

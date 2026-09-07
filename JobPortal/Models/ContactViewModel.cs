@@ -1,4 +1,4 @@
-﻿namespace EmployerNext.Models
+﻿namespace JobPortal.Models
 {
     public class ContactViewModel
     {

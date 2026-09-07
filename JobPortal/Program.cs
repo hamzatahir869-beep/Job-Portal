@@ -1,4 +1,4 @@
-using EmployerNext.Repository;
+using JobPortal.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,6 +1,6 @@
-﻿using EmployerNext.Models;
+﻿using JobPortal.Models;
 
-namespace EmployerNext.Repository
+namespace JobPortal.Repository
 {
     public interface IEmailService
     {
