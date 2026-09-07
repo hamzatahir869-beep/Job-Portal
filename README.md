@@ -1,40 +1,30 @@
-# Job Portal
+# EmployerNext
 
 ## Description
 
-Job Portal is a web-based application designed to connect employers and job seekers through a simple and user-friendly platform. The system allows employers to manage job postings and applicants, while job seekers can explore available job opportunities and apply for suitable positions.
+EmployerNext is a simple one-page web application designed to collect user information through an online form. The submitted form data is processed and sent directly to the client via email using SMTP.
 
-The project is developed using modern .NET technologies and follows a structured and maintainable architecture.
-
-## Features
-
-- User Registration and Login
-- Secure Authentication and Authorization
-- Job Posting and Management
-- Job Search and Filtering
-- Job Application Management
-- Employer and Job Seeker Management
-- Email Notifications
-- Exception and Error Logging
-- Database Integration
-- Responsive and User-Friendly Interface
+The application focuses on providing a clean, simple, and user-friendly interface without requiring a database.
 
 ## Technologies Used
 
-- ASP.NET Core MVC
-- C#
-- SQL Server
-- Entity Framework Core
-- JavaScript
-- jQuery
-- Bootstrap
 - HTML5
 - CSS3
+- JavaScript
+- SMTP for Email Communication
 
-## Project Structure
+## Features
 
-The project follows a clean and organized structure to separate business logic, controllers, models, repositories, and other application components, making the application easier to maintain and extend.
+- Simple one-page interface
+- User-friendly form
+- Client-side form handling
+- Email submission using SMTP
+- Responsive design
+- No database required
 
-## Purpose
+## How It Works
 
-The main purpose of this project is to provide a complete online recruitment platform where employers can publish job opportunities and candidates can find and apply for jobs efficiently.
+1. The user fills out the form.
+2. JavaScript handles the form submission.
+3. The submitted information is processed.
+4. The information is sent to the client via email using SMTP.
